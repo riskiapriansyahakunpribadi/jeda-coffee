@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- >>> EDIT DI SINI <<< (Judul & Deskripsi SEO Halaman Outlet) -->
+  <title>Lokasi Outlet — Jeda Coffee | 12 Gerai di 9 Kota Indonesia</title>
+  <meta name="description" content="Temukan lokasi gerai Jeda Coffee terdekat di kotamu. Hadir di Malang, Surabaya, Yogyakarta, Jakarta Selatan, Bandung, Semarang, Denpasar, Medan, dan Makassar.">
+  <meta name="theme-color" content="#0B6E80">
+
+  <!-- Open Graph & Twitter Card -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="id_ID">
+  <meta property="og:site_name" content="Jeda Coffee">
+  <meta property="og:title" content="Lokasi Outlet — Jeda Coffee | 12 Gerai di 9 Kota Indonesia">
+  <meta property="og:description" content="Jeda hadir lebih dekat untukmu, Teman Jeda. Cek alamat lengkap, jam operasional, dan fasilitas tiap gerai.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=1200&q=80">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Lokasi Outlet — Jeda Coffee">
+  <meta name="twitter:description" content="Temukan 12 gerai Jeda Coffee di 9 kota Indonesia.">
+
+  <!-- Favicon & Google Fonts (Poppins) -->
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,600;1,700&display=swap" rel="stylesheet">
+
+  <!-- CSS Utama -->
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/pages.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Lewati ke konten utama</a>
+
+  <!-- Header disisipkan otomatis oleh assets/js/components.js -->
+  <header id="site-header"></header>
+
+  <main id="main-content">
+    <!-- ============================================================
+         BAGIAN   : Judul Pembuka & Pencari Outlet Dua Panel
+         FUNGSI   : Menampilkan daftar 12 gerai di panel kiri (lengkap
+                    dengan pencarian & chip kota) dan peta Google Maps
+                    interaktif di panel kanan. Di mobile, peta berada
+                    di atas dan daftar berada di bawah.
+         CARA UBAH: Tambah atau ubah data gerai di dalam file
+                    `assets/data/outlets-data.js`.
+         ============================================================ -->
+    <section class="section outlet-finder-section">
+      <div class="container">
+        <div class="outlet-head" data-reveal>
+          <!-- >>> EDIT DI SINI <<< -->
+          <span class="eyebrow eyebrow-triangle">Lokasi Gerai</span>
+          <h1 class="page-title">Jeda Hadir Lebih Dekat Untukmu, <em>Teman Jeda</em></h1>
+          <p class="lead-text">
+            Pilih gerai di daftar untuk melihat titik lokasinya di peta, jam operasional, serta fasilitas ruang yang tersedia.
+          </p>
+        </div>
+
+        <!-- Chip Filter Kota (dirender otomatis oleh assets/js/outlet.js) -->
+        <div class="outlet-city-chips" id="outlet-city-chips" role="tablist" aria-label="Filter gerai berdasarkan kota" data-reveal></div>
+
+        <!-- Dua Panel Pencari Outlet -->
+        <div class="outlet-explorer" data-reveal>
+          <!-- Panel Kiri: Pencarian + Daftar Outlet yang Bisa Discroll -->
+          <div class="outlet-list-panel">
+            <div class="outlet-search-box">
+              <div class="outlet-search-input-wrap">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+                <label for="outlet-search-input" class="sr-only">Cari kota atau alamat</label>
+                <input
+                  type="search"
+                  id="outlet-search-input"
+                  class="outlet-search-input"
+                  placeholder="Cari kota atau alamat..."
+                  autocomplete="off"
+                >
+              </div>
+              <div class="outlet-count-meta" id="outlet-count-meta" aria-live="polite"></div>
+            </div>
+
+            <!-- Daftar Kartu Outlet -->
+            <div class="outlet-cards-scroll" id="outlet-cards-list" role="region" aria-label="Daftar gerai Jeda Coffee"></div>
+          </div>
+
+          <!-- Panel Kanan (Atas di Mobile): Peta Interaktif -->
+          <div class="outlet-map-panel">
+            <div class="outlet-map-header" id="outlet-map-header">
+              <div class="outlet-map-active-info">
+                <span class="outlet-map-badge" id="map-active-city">Malang</span>
+                <h2 class="outlet-map-title" id="map-active-name">Jeda Coffee Ijen (Flagship)</h2>
+              </div>
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=Jl.+Besar+Ijen,+Malang"
+                target="_blank"
+                rel="noopener"
+                class="btn btn-outline btn-sm"
+                id="map-external-btn"
+              >
+                <span>Buka di Google Maps</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                  <polyline points="15 3 21 3 21 9"></polyline>
+                  <line x1="10" y1="14" x2="21" y2="3"></line>
+                </svg>
+              </a>
+            </div>
+
+            <div class="outlet-map-frame-wrap">
+              <iframe
+                id="outlet-map-iframe"
+                class="outlet-map-iframe"
+                src="https://www.google.com/maps?q=Jl.+Besar+Ijen,+Malang,+Jawa+Timur&output=embed"
+                title="Peta lokasi Jeda Coffee Ijen (Flagship) di Malang"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         BAGIAN   : Galeri Interior Gerai (Grid 3 Kolom)
+         FUNGSI   : Menampilkan 6 foto suasana ruang duduk dan meja bar
+                    Jeda Coffee dengan sudut membulat dan efek hover.
+         CARA UBAH: Ganti URL foto `outlet_interior_1` sampai
+                    `outlet_interior_6` di `assets/data/images.js`.
+         ============================================================ -->
+    <section class="section outlet-gallery-section">
+      <div class="container">
+        <div class="section-header center" data-reveal>
+          <span class="eyebrow">Suasana Ruang</span>
+          <h2 class="section-title">Sudut Hangat di Setiap <em>Gerai</em></h2>
+          <p class="lead-text">
+            Setiap gerai Jeda dirancang dengan pencahayaan teduh, meja yang nyaman untuk bekerja maupun berbincang, dan aroma kopi yang menenangkan.
+          </p>
+        </div>
+
+        <div class="interior-gallery-grid">
+          <figure class="interior-gallery-item" data-reveal>
+            <div class="interior-gallery-media" data-image-slot="outlet_interior_1" data-width="800" data-height="600"></div>
+            <figcaption class="interior-gallery-caption">Meja Komunal & Area Kerja</figcaption>
+          </figure>
+          <figure class="interior-gallery-item" data-reveal>
+            <div class="interior-gallery-media" data-image-slot="outlet_interior_2" data-width="800" data-height="600"></div>
+            <figcaption class="interior-gallery-caption">Sudut Bincang Sore</figcaption>
+          </figure>
+          <figure class="interior-gallery-item" data-reveal>
+            <div class="interior-gallery-media" data-image-slot="outlet_interior_3" data-width="800" data-height="600"></div>
+            <figcaption class="interior-gallery-caption">Meja Seduh Espresso Bar</figcaption>
+          </figure>
+          <figure class="interior-gallery-item" data-reveal>
+            <div class="interior-gallery-media" data-image-slot="outlet_interior_4" data-width="800" data-height="600"></div>
+            <figcaption class="interior-gallery-caption">Teras Hijau Semi-Outdoor</figcaption>
+          </figure>
+          <figure class="interior-gallery-item" data-reveal>
+            <div class="interior-gallery-media" data-image-slot="outlet_interior_5" data-width="800" data-height="600"></div>
+            <figcaption class="interior-gallery-caption">Sapaan Hangat Tim Barista</figcaption>
+          </figure>
+          <figure class="interior-gallery-item" data-reveal>
+            <div class="interior-gallery-media" data-image-slot="outlet_interior_6" data-width="800" data-height="600"></div>
+            <figcaption class="interior-gallery-caption">Kopi & Pastry Segar Setiap Pagi</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer disisipkan otomatis oleh assets/js/components.js -->
+  <footer id="site-footer"></footer>
+
+  <!-- Data & Script -->
+  <script src="assets/data/site-config.js"></script>
+  <script src="assets/data/images.js"></script>
+  <script src="assets/data/outlets-data.js"></script>
+  <script src="assets/js/components.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/outlet.js"></script>
+</body>
+</html>

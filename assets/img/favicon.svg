@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" role="img" aria-label="Ikon Jeda Coffee">
+  <!-- ============================================================
+       BAGIAN   : Favicon Website Jeda Coffee
+       FUNGSI   : Ikon tab browser berbentuk simbol pause Jeda di atas
+                  latar teal membulat.
+       CARA UBAH: Ubah atribut fill pada rect pertama untuk mengganti
+                  warna latar ikon tab.
+       ============================================================ -->
+  <rect width="64" height="64" rx="18" fill="#0B6E80" />
+  <rect x="21" y="18" width="8" height="28" rx="4" fill="#FFFFFF" />
+  <rect x="35" y="18" width="8" height="28" rx="4" fill="#CDEFF5" />
+</svg>

@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- >>> EDIT DI SINI <<< (Judul & Deskripsi SEO Halaman Cerita Kami) -->
+  <title>Cerita Kami Jeda Coffee | Berhenti Sejenak, Seduh Dulu</title>
+  <meta name="description" content="Kenalan lebih dekat dengan Jeda Coffee. Berawal dari satu meja kecil di Malang tahun 2018, kini hadir di 12 gerai dan 9 kota untuk menemani waktu jedamu.">
+  <meta name="theme-color" content="#0B6E80">
+
+  <!-- Open Graph & Twitter Card -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="id_ID">
+  <meta property="og:site_name" content="Jeda Coffee">
+  <meta property="og:title" content="Cerita Kami — Jeda Coffee | Berhenti Sejenak, Seduh Dulu">
+  <meta property="og:description" content="Kenalan lebih dekat dengan Jeda Coffee. Cerita, perjalanan, dan orang-orang di balik setiap cangkir Jeda.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1200&q=80">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Cerita Kami — Jeda Coffee">
+  <meta name="twitter:description" content="Berhenti sejenak, seduh dulu. Teman jeda di setiap harimu.">
+
+  <!-- Favicon & Google Fonts (Poppins) -->
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,600;1,700&display=swap" rel="stylesheet">
+
+  <!-- CSS Utama -->
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/pages.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Lewati ke konten utama</a>
+
+  <!-- Header disisipkan otomatis oleh assets/js/components.js -->
+  <header id="site-header"></header>
+
+  <main id="main-content">
+    <!-- ============================================================
+         BAGIAN   : Hero Pembuka Halaman Cerita Kami
+         FUNGSI   : Menampilkan pengenalan utama Jeda Coffee dengan
+                    tata letak dua kolom (teks di kiri, foto di kanan).
+         CARA UBAH: Edit teks judul/paragraf di bawah, atau ganti foto
+                    melalui kunci `hero_cerita` di assets/data/images.js.
+         ============================================================ -->
+    <section class="hero-split">
+      <div class="container hero-split-grid">
+        <div class="hero-copy" data-reveal>
+          <!-- >>> EDIT DI SINI <<< -->
+          <span class="eyebrow eyebrow-triangle">Tentang Jeda</span>
+          <h1 class="page-title">Ini Cerita Kami</h1>
+          <p class="lead-text">
+            Kenalan lebih dekat dengan kami. Cerita, perjalanan, dan orang-orang di balik setiap cangkir Jeda.
+          </p>
+          <div class="btn-group">
+            <a href="menu.html" class="btn btn-primary">
+              <span>Lihat Menu</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+            <a href="outlet.html" class="btn btn-outline">Temukan Outlet</a>
+          </div>
+        </div>
+
+        <div class="hero-media" data-reveal data-image-slot="hero_cerita" data-width="800" data-height="600" data-eager="true"></div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         BAGIAN   : Pita Statistik Teal (Counter)
+         FUNGSI   : Menampilkan pencapaian angka Jeda Coffee yang
+                    naik otomatis dari 0 saat bagian ini terlihat.
+         CARA UBAH: Ubah nilai atribut `data-counter` pada elemen
+                    .stat-number sesuai angka terbaru.
+         ============================================================ -->
+    <section class="teal-band" aria-label="Statistik Jeda Coffee">
+      <div class="container">
+        <div class="stats-grid">
+          <!-- >>> EDIT DI SINI <<< -->
+          <div class="stat-item" data-reveal>
+            <div class="stat-number" data-counter="9">9</div>
+            <div class="stat-label">Kota di Indonesia</div>
+          </div>
+          <div class="stat-item" data-reveal>
+            <div class="stat-number" data-counter="15000" data-suffix="+">15.000+</div>
+            <div class="stat-label">Teman Jeda</div>
+          </div>
+          <div class="stat-item" data-reveal>
+            <div class="stat-number" data-counter="12">12</div>
+            <div class="stat-label">Outlet Hangat</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         BAGIAN   : Narasi "Jeda untuk Harimu"
+         FUNGSI   : Menceritakan filosofi ruang dan seduhan Jeda Coffee
+                    untuk para pekerja kota dan anak muda.
+         CARA UBAH: Edit dua paragraf di dalam .story-copy atau ganti
+                    foto `cerita_ruang` di assets/data/images.js.
+         ============================================================ -->
+    <section class="section">
+      <div class="container story-grid">
+        <div class="story-copy" data-reveal>
+          <!-- >>> EDIT DI SINI <<< -->
+          <span class="eyebrow">Filosofi Kami</span>
+          <h2 class="section-title">Jeda untuk <em>Harimu</em></h2>
+          <p>
+            Di tengah jadwal rapat yang padat, tenggat tugas yang mengejar, dan riuhnya perjalanan kota, kita sering lupa bahwa mengambil napas sejenak bukanlah tanda menyerah. Sejak menyeduh cangkir pertama kami di sebuah meja kecil di Malang pada 2018, Jeda hadir dengan satu keyakinan sederhana: setiap orang berhak punya waktu berhenti sejenak yang hangat dan tidak terburu-buru.
+          </p>
+          <p>
+            Bagi kami, kedai kopi bukan sekadar tempat membeli kafein lalu pergi. Jeda dirancang sebagai ruang teduh tempat kamu bisa fokus menyelesaikan pekerjaan sendiri, berbagi tawa sore bersama sahabat lama, atau berbincang santai dengan keluarga di akhir pekan. Berhenti sejenak, seduh dulu, lalu lanjutkan harimu dengan hati yang lebih tenang.
+          </p>
+        </div>
+
+        <div class="story-media" data-reveal data-image-slot="cerita_ruang" data-width="900" data-height="650"></div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         BAGIAN   : Kartu Visi dan Misi
+         FUNGSI   : Menampilkan Visi dan 3 poin Misi Jeda Coffee dalam
+                    dua kartu berdampingan.
+         CARA UBAH: Ubah kalimat visi atau daftar misi di bawah.
+         ============================================================ -->
+    <section class="section section-vision">
+      <div class="container">
+        <div class="section-header center" data-reveal>
+          <span class="eyebrow">Arah Langkah Kami</span>
+          <h2 class="section-title">Komitmen di Setiap <em>Cangkir</em></h2>
+        </div>
+
+        <div class="vision-grid">
+          <!-- Kartu Visi -->
+          <article class="vision-card is-vision" data-reveal>
+            <div class="vision-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon>
+              </svg>
+            </div>
+            <span class="eyebrow">Visi Jeda</span>
+            <!-- >>> EDIT DI SINI <<< -->
+            <h3 class="vision-card-title">Menjaga Hangatnya Waktu Berhenti Sejenak</h3>
+            <p class="vision-quote">
+              “Menghadirkan kopi Nusantara yang diseduh dengan sepenuh hati, agar setiap orang punya jeda yang layak dinikmati.”
+            </p>
+          </article>
+
+          <!-- Kartu Misi -->
+          <article class="vision-card is-mission" data-reveal>
+            <div class="vision-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                <polyline points="9 12 11 14 15 10"></polyline>
+              </svg>
+            </div>
+            <span class="eyebrow">Misi Jeda</span>
+            <h3 class="vision-card-title">Tiga Janji untuk Teman Jeda</h3>
+            <!-- >>> EDIT DI SINI <<< -->
+            <ol class="mission-list">
+              <li>
+                <span class="mission-num">01</span>
+                <p>Hadir di banyak kota dengan pengalaman ruang dan pelayanan yang sama hangatnya.</p>
+              </li>
+              <li>
+                <span class="mission-num">02</span>
+                <p>Memakai biji kopi dari petani lokal Indonesia dengan kualitas sangrai dan seduh yang terjaga.</p>
+              </li>
+              <li>
+                <span class="mission-num">03</span>
+                <p>Terus berinovasi pada menu dan layanan tanpa melupakan ketulusan rasa.</p>
+              </li>
+            </ol>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         BAGIAN   : Carousel Timeline Perjalanan Kami (2018 - 2026)
+         FUNGSI   : Menampilkan kartu foto perjalanan tahun ke tahun
+                    yang dapat digeser dengan jari, mouse, atau panah.
+         CARA UBAH: Isi kartu diambil otomatis dari file
+                    `assets/data/timeline-data.js`.
+         ============================================================ -->
+    <section class="section timeline-section">
+      <div class="container">
+        <div class="timeline-header" data-reveal>
+          <div>
+            <span class="eyebrow">PERJALANAN KAMI</span>
+            <h2 class="section-title">Dari Satu Meja ke <em>12 Gerai</em></h2>
+          </div>
+          <div class="carousel-controls">
+            <button type="button" class="carousel-btn" id="timeline-prev" aria-label="Tahun sebelumnya">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="15 18 9 12 15 6"></polyline>
+              </svg>
+            </button>
+            <button type="button" class="carousel-btn" id="timeline-next" aria-label="Tahun berikutnya">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Track kartu timeline dirender oleh assets/js/timeline.js -->
+        <div class="snap-track timeline-track" id="timeline-track" tabindex="0" role="region" aria-label="Carousel perjalanan Jeda Coffee dari 2018 hingga 2026"></div>
+
+        <!-- Indikator titik tahun di bawah carousel -->
+        <div class="timeline-years" id="timeline-years" role="tablist" aria-label="Pilih tahun perjalanan"></div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         BAGIAN   : Menu Andalan (Featured Menu)
+         FUNGSI   : Menampilkan 4 kartu menu terpilih memakai komponen
+                    kartu yang sama persis dengan halaman Menu.
+         CARA UBAH: Tandai produk dengan `featured: true` di dalam
+                    file `assets/data/menu-data.js`.
+         ============================================================ -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header center" data-reveal>
+          <span class="eyebrow">Racikan Favorit</span>
+          <h2 class="section-title">Menu <em>Andalan</em> Teman Jeda</h2>
+          <p class="lead-text">
+            Empat sajian yang paling sering menemani obrolan dan waktu fokus di seluruh gerai kami. Tap atau arahkan kursor pada kartu untuk melihat cerita rasanya.
+          </p>
+        </div>
+
+        <div class="product-grid cols-4" id="featured-menu-grid"></div>
+
+        <div class="section-cta-center" data-reveal>
+          <a href="menu.html" class="btn btn-outline">
+            <span>Lihat Semua Menu</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         BAGIAN   : Kotak Ajakan (CTA Box)
+         FUNGSI   : Mengajak pengunjung menemukan lokasi gerai terdekat.
+         CARA UBAH: Edit judul atau teks ajakan di bawah.
+         ============================================================ -->
+    <section class="section section-cta-bottom">
+      <div class="container">
+        <div class="cta-box" data-reveal>
+          <!-- >>> EDIT DI SINI <<< -->
+          <span class="eyebrow" style="color: var(--sky-100);">Mampir ke Jeda</span>
+          <h2 class="section-title">Siap Mulai Harimu dengan Jeda?</h2>
+          <p>
+            Kunjungi gerai Jeda Coffee terdekat di kotamu. Meja yang nyaman, Wi-Fi cepat, dan cangkir hangat sudah menunggumu.
+          </p>
+          <a href="outlet.html" class="btn btn-white">
+            <span>Temukan Outlet Terdekat</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer disisipkan otomatis oleh assets/js/components.js -->
+  <footer id="site-footer"></footer>
+
+  <!-- Data & Script (Urutan pemanggilan wajib dipertahankan agar berjalan di file://) -->
+  <script src="assets/data/site-config.js"></script>
+  <script src="assets/data/images.js"></script>
+  <script src="assets/data/timeline-data.js"></script>
+  <script src="assets/data/menu-data.js"></script>
+  <script src="assets/js/components.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/timeline.js"></script>
+</body>
+</html>

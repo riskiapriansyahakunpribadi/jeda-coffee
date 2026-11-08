@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- >>> EDIT DI SINI <<< (Judul & Deskripsi SEO Halaman Menu) -->
+  <title>Menu Jeda — Jeda Coffee | Kopi Nusantara, Non-Kopi & Pastry</title>
+  <meta name="description" content="Temukan menu favorit untuk melengkapi aktivitasmu hari ini. Mulai dari Es Kopi Susu Jeda, Oat Latte, Macchiato, botol literan Jeda-IN, hingga pastry hangat.">
+  <meta name="theme-color" content="#0B6E80">
+
+  <!-- Open Graph & Twitter Card -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="id_ID">
+  <meta property="og:site_name" content="Jeda Coffee">
+  <meta property="og:title" content="Menu Jeda — Jeda Coffee | Kopi Nusantara, Non-Kopi & Pastry">
+  <meta property="og:description" content="Temukan menu favorit untuk melengkapi aktivitasmu hari ini di seluruh gerai Jeda Coffee.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=900&q=80">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Menu Jeda — Jeda Coffee">
+  <meta name="twitter:description" content="Katalog lengkap minuman kopi, non-kopi, botol literan, pastry, dan makanan Jeda Coffee.">
+
+  <!-- Favicon & Google Fonts (Poppins) -->
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,600;1,700&display=swap" rel="stylesheet">
+
+  <!-- CSS Utama -->
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/pages.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Lewati ke konten utama</a>
+
+  <!-- Header disisipkan otomatis oleh assets/js/components.js -->
+  <header id="site-header"></header>
+
+  <main id="main-content">
+    <!-- ============================================================
+         BAGIAN   : Banner Pembuka Halaman Menu
+         FUNGSI   : Menampilkan pita gradasi langit (teal muda ke putih)
+                    dengan judul "Menu Jeda" di kiri dan foto produk
+                    besar di kanan.
+         CARA UBAH: Edit teks judul/kalimat di bawah, atau ganti foto
+                    melalui kunci `menu_banner` di assets/data/images.js.
+         ============================================================ -->
+    <section class="menu-banner">
+      <div class="container menu-banner-grid">
+        <div class="menu-banner-copy" data-reveal>
+          <!-- >>> EDIT DI SINI <<< -->
+          <span class="eyebrow eyebrow-triangle">Katalog Sajian</span>
+          <h1 class="page-title">Menu Jeda</h1>
+          <p class="lead-text">
+            Temukan menu favorit untuk melengkapi aktivitasmu hari ini.
+          </p>
+        </div>
+
+        <div class="menu-banner-media" data-reveal data-image-slot="menu_banner" data-width="720" data-height="540" data-eager="true"></div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         BAGIAN   : Pencarian, Filter Kategori & Katalog Produk
+         FUNGSI   : Menampilkan kolom pencarian langsung (debounce 150ms),
+                    sidebar kategori sticky di desktop / chip geser di
+                    mobile, serta grid produk dengan tombol "Lihat Lebih Banyak".
+         CARA UBAH: Tambah atau ubah daftar produk dan harga di dalam
+                    file `assets/data/menu-data.js`.
+         ============================================================ -->
+    <section class="section menu-catalog-section">
+      <div class="container">
+        <!-- Baris Pencarian Produk -->
+        <div class="menu-search-bar" data-reveal>
+          <form class="menu-search-form" id="menu-search-form" role="search" aria-label="Cari produk menu Jeda">
+            <div class="menu-search-input-wrap">
+              <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+              <label for="menu-search-input" class="sr-only">Cari produk</label>
+              <input
+                type="search"
+                id="menu-search-input"
+                class="menu-search-input"
+                placeholder="Cari produk..."
+                autocomplete="off"
+              >
+            </div>
+            <button type="submit" class="btn btn-primary menu-search-btn">Cari</button>
+          </form>
+        </div>
+
+        <!-- Layout Dua Kolom: Sidebar Kategori + Area Grid Produk -->
+        <div class="menu-layout">
+          <aside class="menu-sidebar" aria-label="Kategori Menu">
+            <h2 class="menu-sidebar-title">Kategori</h2>
+            <!-- Daftar tombol kategori dirender otomatis oleh assets/js/menu.js -->
+            <div class="menu-category-list" id="menu-category-list" role="tablist" aria-label="Filter kategori produk"></div>
+          </aside>
+
+          <div class="menu-content">
+            <!-- Baris info jumlah produk yang sedang tampil -->
+            <div class="menu-result-meta" id="menu-result-meta" aria-live="polite"></div>
+
+            <!-- Grid produk (4 kolom di desktop lebar, 3 di laptop, 2 di tablet/mobile) -->
+            <div class="product-grid cols-4" id="menu-product-grid"></div>
+
+            <!-- Pesan ramah ketika hasil pencarian kosong -->
+            <div class="menu-empty-state" id="menu-empty-state" hidden>
+              <div class="menu-empty-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M18 8h1a4 4 0 0 1 0 8h-1"></path>
+                  <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path>
+                  <line x1="6" y1="1" x2="6" y2="4"></line>
+                  <line x1="10" y1="1" x2="10" y2="4"></line>
+                  <line x1="14" y1="1" x2="14" y2="4"></line>
+                </svg>
+              </div>
+              <h3 class="menu-empty-title">Belum ketemu menu yang kamu cari</h3>
+              <p id="menu-empty-text">
+                Coba gunakan kata kunci lain seperti "kopi susu", "aren", "croissant", atau lihat semua kategori.
+              </p>
+              <button type="button" class="btn btn-outline" id="menu-reset-btn">Reset pencarian</button>
+            </div>
+
+            <!-- Tombol Lihat Lebih Banyak (+12 item setiap klik) -->
+            <div class="menu-load-more-wrap" id="menu-load-more-wrap">
+              <button type="button" class="btn btn-outline" id="menu-load-more-btn">
+                <span>Lihat Lebih Banyak</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </button>
+            </div>
+
+            <!-- Catatan kecil di bawah grid -->
+            <p class="menu-footnote">
+              Menu dan harga dapat berbeda di tiap outlet.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer disisipkan otomatis oleh assets/js/components.js -->
+  <footer id="site-footer"></footer>
+
+  <!-- Data & Script -->
+  <script src="assets/data/site-config.js"></script>
+  <script src="assets/data/images.js"></script>
+  <script src="assets/data/menu-data.js"></script>
+  <script src="assets/js/components.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/menu.js"></script>
+</body>
+</html>

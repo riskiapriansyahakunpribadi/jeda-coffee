@@ -1,0 +1,314 @@
+/* ============================================================
+   BAGIAN   : Variabel Sistem Desain (:root)
+   FUNGSI   : Menyimpan palet warna resmi, tipografi, radius sudut,
+              bayangan, dan jarak standar untuk seluruh halaman.
+   CARA UBAH: Ganti kode hex warna di bawah untuk mengubah nuansa
+              warna seluruh website sekaligus.
+   ============================================================ */
+:root {
+  /* >>> EDIT DI SINI <<< */
+  --teal-900: #08475A;
+  --teal-700: #0B6E80;
+  --teal-500: #1E96AB;
+  --teal-300: #5CC3D6;
+  --sky-100: #CDEFF5;
+  --bg: #F8F9FA;
+  --surface: #FFFFFF;
+  --text: #1F2A30;
+  --muted: #5B6B73;
+  --line: #E3E9EC;
+
+  /* Gradasi resmi brand */
+  --gradient-product: linear-gradient(165deg, #0B6E80 0%, #3FB5CB 55%, #CDEFF5 100%);
+  --gradient-cta: linear-gradient(120deg, #08475A 0%, #1E96AB 100%);
+
+  /* Tipografi */
+  --font-sans: 'Poppins', system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+
+  /* Bentuk, Radius & Bayangan */
+  --radius-card: 16px;
+  --radius-img: 20px;
+  --radius-pill: 999px;
+  --radius-cta: 28px;
+  --shadow-soft: 0 8px 24px rgba(8, 71, 90, 0.08);
+
+  /* Ukuran Kontainer & Jarak Bagian */
+  --container-max: 1200px;
+  --container-pad: 20px;
+  --section-space: 64px;
+  --header-h: 76px;
+  --ease-out: cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+@media (min-width: 768px) {
+  :root {
+    --container-pad: 24px;
+    --section-space: 96px;
+    --header-h: 84px;
+  }
+}
+
+/* ============================================================
+   BAGIAN   : CSS Reset & Dasar Halaman
+   FUNGSI   : Menyamakan tampilan dasar di semua browser dan
+              mencegah scroll horizontal pada layar kecil (360px).
+   CARA UBAH: Bagian ini jarang perlu diubah.
+   ============================================================ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  overflow-x: hidden;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  transition: opacity 300ms ease;
+}
+
+body.page-loaded {
+  opacity: 1;
+}
+
+body.menu-open {
+  overflow: hidden;
+}
+
+main {
+  flex: 1;
+  padding-top: var(--header-h);
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 200ms ease;
+}
+
+button,
+input {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  border: none;
+  background: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+/* Indikator fokus keyboard yang jelas untuk aksesibilitas */
+:focus-visible {
+  outline: 2px solid var(--teal-500);
+  outline-offset: 3px;
+}
+
+/* ============================================================
+   BAGIAN   : Aturan Tipografi Standar
+   FUNGSI   : Mengatur ukuran judul halaman, judul bagian, label
+              kecil (eyebrow), dan paragraf sesuai sistem desain.
+   CARA UBAH: Sesuaikan nilai clamp() jika ingin memperbesar atau
+              memperkecil ukuran huruf.
+   ============================================================ */
+.page-title {
+  font-size: clamp(2.25rem, 5vw, 3.5rem);
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--teal-700);
+  letter-spacing: -0.02em;
+}
+
+.section-title {
+  font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--text);
+  letter-spacing: -0.015em;
+}
+
+/* Kata aksen miring berwarna teal di dalam judul bagian */
+.section-title em,
+.page-title em {
+  font-style: italic;
+  color: var(--teal-700);
+}
+
+/* Label huruf kapital di atas judul */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--teal-700);
+  margin-bottom: 12px;
+}
+
+.eyebrow-triangle::before {
+  content: "";
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 8px solid var(--teal-700);
+}
+
+p,
+.lead-text {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--muted);
+  max-width: 65ch;
+}
+
+@media (min-width: 768px) {
+  .lead-text {
+    font-size: 1.0625rem;
+  }
+}
+
+/* ============================================================
+   BAGIAN   : Kontainer, Grid 12 Kolom & Jarak Bagian
+   FUNGSI   : Mengatur batas lebar 1200px dan tata letak responsif.
+   CARA UBAH: Gunakan class .container pada pembungkus utama section.
+   ============================================================ */
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--container-pad);
+  padding-right: var(--container-pad);
+}
+
+.section {
+  padding-top: var(--section-space);
+  padding-bottom: var(--section-space);
+}
+
+.section-header {
+  margin-bottom: 40px;
+}
+
+.section-header.center {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.grid-12 {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 24px;
+}
+
+/* ============================================================
+   BAGIAN   : Animasi Scroll & Aksesibilitas Gerak
+   FUNGSI   : Efek fade-in naik 16px saat elemen masuk ke layar,
+              serta mematikan animasi jika pengguna mengaktifkan
+              prefers-reduced-motion.
+   CARA UBAH: Tambahkan atribut data-reveal pada elemen HTML yang
+              ingin diberi efek muncul halus.
+   ============================================================ */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(16px);
+  transition:
+    opacity 600ms var(--ease-out),
+    transform 600ms var(--ease-out);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+[data-reveal].is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Link lewati ke konten utama untuk pengguna keyboard / screen reader */
+.skip-link {
+  position: fixed;
+  top: -100px;
+  left: 16px;
+  z-index: 2000;
+  background-color: var(--teal-900);
+  color: var(--surface);
+  padding: 12px 20px;
+  border-radius: var(--radius-pill);
+  font-weight: 600;
+  font-size: 0.875rem;
+  box-shadow: var(--shadow-soft);
+  transition: top 200ms ease;
+}
+
+.skip-link:focus {
+  top: 16px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  body {
+    opacity: 1 !important;
+  }
+
+  [data-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

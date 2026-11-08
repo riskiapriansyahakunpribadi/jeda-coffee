@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- >>> EDIT DI SINI <<< (Judul & Deskripsi SEO Halaman Event) -->
+  <title>Layanan #JedaEvent — Jeda Coffee | Coffee Booth & Catering Acara</title>
+  <meta name="description" content="Hadirkan kehangatan Jeda Coffee di pernikahan, ulang tahun, seminar, dan acara kantormu. Tersedia Paket Ringkas, Paket Lengkap dengan barista, dan Jeda-IN Bucket.">
+  <meta name="theme-color" content="#0B6E80">
+
+  <!-- Open Graph & Twitter Card -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="id_ID">
+  <meta property="og:site_name" content="Jeda Coffee">
+  <meta property="og:title" content="Layanan #JedaEvent — Jeda Coffee | Coffee Booth & Catering Acara">
+  <meta property="og:description" content="Teman setia yang selalu siap melengkapi setiap event dengan aroma dan rasa yang mendukung.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=1600&q=80">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Layanan #JedaEvent — Jeda Coffee">
+  <meta name="twitter:description" content="Catering kopi dan booth barista untuk pernikahan, gathering, dan acara kantor.">
+
+  <!-- Favicon & Google Fonts (Poppins) -->
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,600;1,700&display=swap" rel="stylesheet">
+
+  <!-- CSS Utama -->
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/pages.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Lewati ke konten utama</a>
+
+  <!-- Header disisipkan otomatis oleh assets/js/components.js -->
+  <header id="site-header"></header>
+
+  <main id="main-content">
+    <!-- ============================================================
+         BAGIAN   : Hero Layar Penuh #JedaEvent
+         FUNGSI   : Menampilkan foto suasana acara dengan lapisan
+                    gelap tipis, hashtag besar #JedaEvent, dan kalimat
+                    pembuka.
+         CARA UBAH: Edit teks di bawah atau ganti URL foto `event_hero`
+                    di dalam file `assets/data/images.js`.
+         ============================================================ -->
+    <section class="event-hero">
+      <div class="event-hero-bg" data-image-slot="event_hero" data-width="1600" data-height="900" data-eager="true"></div>
+      <div class="event-hero-overlay"></div>
+      <div class="container event-hero-content" data-reveal>
+        <!-- >>> EDIT DI SINI <<< -->
+        <span class="event-hero-badge">Layanan Catering & Coffee Booth</span>
+        <h1 class="event-hero-title">#JedaEvent</h1>
+        <p class="event-hero-lead">
+          Teman setia yang selalu siap melengkapi setiap event dengan aroma dan rasa yang mendukung.
+        </p>
+        <div class="btn-group" style="justify-content: center;">
+          <a href="#paket-event" class="btn btn-white">Lihat Pilihan Paket</a>
+          <a
+            href="https://wa.me/6281200000000?text=Halo%20Jeda%20Coffee%2C%20saya%20ingin%20berkonsultasi%20mengenai%20layanan%20%23JedaEvent."
+            data-wa-event="Konsultasi Umum #JedaEvent"
+            target="_blank"
+            rel="noopener"
+            class="btn btn-primary"
+          >
+            Hubungi Tim Event
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         BAGIAN   : Carousel Paket Harga #JedaEvent
+         FUNGSI   : Menampilkan 3 kartu paket harga (Paket Ringkas,
+                    Paket Lengkap, Jeda-IN Bucket) dengan scroll-snap
+                    dan titik indikator aktif di bawahnya.
+         CARA UBAH: Ubah harga, jumlah cup, atau rincian fasilitas
+                    paket langsung pada kartu `.package-card` di bawah.
+         ============================================================ -->
+    <section class="section" id="paket-event">
+      <div class="container">
+        <div class="timeline-header" data-reveal>
+          <div>
+            <span class="eyebrow">Pilihan Paket</span>
+            <h2 class="section-title">Sesuaikan dengan Skala <em>Acaramu</em></h2>
+          </div>
+          <div class="carousel-controls">
+            <button type="button" class="carousel-btn" id="pkg-prev" aria-label="Paket sebelumnya">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="15 18 9 12 15 6"></polyline>
+              </svg>
+            </button>
+            <button type="button" class="carousel-btn" id="pkg-next" aria-label="Paket berikutnya">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- >>> EDIT DI SINI <<< (Tiga Kartu Paket Harga) -->
+        <div class="snap-track package-track" id="package-track" tabindex="0" role="region" aria-label="Pilihan paket layanan JedaEvent">
+          <!-- Paket 1: Paket Ringkas -->
+          <article class="package-card" data-pkg-index="0" data-reveal>
+            <div class="package-head">
+              <span class="package-tag">Rapat & Syukuran</span>
+              <h3 class="package-name">Paket Ringkas</h3>
+              <p class="package-quota">Mulai dari 50 cup</p>
+              <div class="package-price">Rp 1.250.000</div>
+            </div>
+            <ul class="package-features">
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>50 cup minuman dingin/hangat (bebas pilih hingga 3 varian menu).</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>Pengantaran langsung dalam boks berinsulasi suhu ke lokasi acara.</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>Lengkap dengan es batu terpisah, sedotan, tisu, dan stiker ucapan custom.</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>Gratis biaya kirim hingga radius 8 km dari gerai Jeda terdekat.</span>
+              </li>
+            </ul>
+            <a
+              href="https://wa.me/6281200000000?text=Halo%20Jeda%20Coffee%2C%20saya%20ingin%20bertanya%20mengenai%20Paket%20Ringkas%20(mulai%2050%20cup)."
+              data-wa-event="Paket Ringkas (mulai dari 50 cup - Rp 1.250.000)"
+              target="_blank"
+              rel="noopener"
+              class="btn btn-outline package-btn"
+            >
+              <span>Tanya Paket Ini</span>
+            </a>
+          </article>
+
+          <!-- Paket 2: Paket Lengkap (Unggulan) -->
+          <article class="package-card is-featured" data-pkg-index="1" data-reveal>
+            <div class="package-head">
+              <span class="package-tag">Paling Populer • Pernikahan & Gathering</span>
+              <h3 class="package-name">Paket Lengkap</h3>
+              <p class="package-quota">Mulai dari 150 cup</p>
+              <div class="package-price">Rp 3.600.000</div>
+            </div>
+            <ul class="package-features">
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>150 cup sajian segar yang diracik langsung di tempat (maksimal 4 varian).</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>Meja bar portable JedaEvent yang estetik dan 2 barista berseragam rapi.</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>Durasi layanan penuh selama 4 jam (di luar waktu bongkar pasang).</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>Desain papan menu meja & sleeve cup khusus sesuai nama acaramu.</span>
+              </li>
+            </ul>
+            <a
+              href="https://wa.me/6281200000000?text=Halo%20Jeda%20Coffee%2C%20saya%20ingin%20bertanya%20mengenai%20Paket%20Lengkap%20(mulai%20150%20cup)."
+              data-wa-event="Paket Lengkap (mulai dari 150 cup - Rp 3.600.000)"
+              target="_blank"
+              rel="noopener"
+              class="btn btn-white package-btn"
+            >
+              <span>Tanya Paket Ini</span>
+            </a>
+          </article>
+
+          <!-- Paket 3: Jeda-IN Bucket -->
+          <article class="package-card" data-pkg-index="2" data-reveal>
+            <div class="package-head">
+              <span class="package-tag">Hampers & Komunitas</span>
+              <h3 class="package-name">Jeda-IN Bucket</h3>
+              <p class="package-quota">Mulai dari 30 pax</p>
+              <div class="package-price">Rp 900.000</div>
+            </div>
+            <ul class="package-features">
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>30 botol Jeda-IN 225ml + 30 pastry hangat dalam kemasan satuan rapi.</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>Praktis langsung dibagikan untuk peserta seminar, workshop, atau bingkisan.</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>Bebas kombinasikan varian Kopi Susu, Kopi Gula Aren, Milk Tea, dan Cokelat.</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>Termasuk kartu ucapan terima kasih yang bisa dicetak sesuai permintaan.</span>
+              </li>
+            </ul>
+            <a
+              href="https://wa.me/6281200000000?text=Halo%20Jeda%20Coffee%2C%20saya%20ingin%20bertanya%20mengenai%20paket%20Jeda-IN%20Bucket%20(mulai%2030%20pax)."
+              data-wa-event="Jeda-IN Bucket (mulai dari 30 pax - Rp 900.000)"
+              target="_blank"
+              rel="noopener"
+              class="btn btn-outline package-btn"
+            >
+              <span>Tanya Paket Ini</span>
+            </a>
+          </article>
+        </div>
+
+        <!-- Titik Indikator Paket -->
+        <div class="package-dots" id="package-dots" role="tablist" aria-label="Indikator paket event">
+          <button type="button" class="pkg-dot is-active" role="tab" aria-selected="true" data-pkg-dot="0" aria-label="Paket Ringkas"></button>
+          <button type="button" class="pkg-dot" role="tab" aria-selected="false" data-pkg-dot="1" aria-label="Paket Lengkap"></button>
+          <button type="button" class="pkg-dot" role="tab" aria-selected="false" data-pkg-dot="2" aria-label="Jeda-IN Bucket"></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         BAGIAN   : Pilihan Menu Event (#TemaniHariBahagiamu)
+         FUNGSI   : Menampilkan 4 kartu menu favorit untuk suguhan tamu
+                    menggunakan komponen kartu menu yang seragam.
+         CARA UBAH: Tandai item dengan `eventPick: true` di dalam file
+                    `assets/data/menu-data.js`.
+         ============================================================ -->
+    <section class="section event-menu-section">
+      <div class="container">
+        <div class="section-header center" data-reveal>
+          <span class="eyebrow">Sajian Tamu Undangan</span>
+          <h2 class="section-title"><em>#TemaniHariBahagiamu</em> di Setiap Momen</h2>
+          <p class="lead-text">
+            Kombinasi varian kopi lembut dan minuman segar non-kopi yang paling disukai oleh tamu lintas usia di berbagai acara.
+          </p>
+        </div>
+
+        <div class="product-grid cols-4" id="event-menu-grid"></div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         BAGIAN   : Galeri Event & Langkah Pemesanan
+         FUNGSI   : Menampilkan dokumentasi suasana layanan #JedaEvent
+                    dan 3 langkah mudah pemesanan (Hubungi, Konfirmasi, Hari-H).
+         CARA UBAH: Ganti foto `event_galeri_1` s/d `event_galeri_4` di
+                    dalam file `assets/data/images.js`.
+         ============================================================ -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header center" data-reveal>
+          <span class="eyebrow">Dokumentasi Momen</span>
+          <h2 class="section-title">Hangatnya Jeda di Berbagai <em>Acara</em></h2>
+        </div>
+
+        <div class="event-gallery-grid">
+          <figure class="interior-gallery-item" data-reveal>
+            <div class="interior-gallery-media" data-image-slot="event_galeri_1" data-width="800" data-height="600"></div>
+            <figcaption class="interior-gallery-caption">Resepsi Pernikahan & Pertunangan</figcaption>
+          </figure>
+          <figure class="interior-gallery-item" data-reveal>
+            <div class="interior-gallery-media" data-image-slot="event_galeri_2" data-width="800" data-height="600"></div>
+            <figcaption class="interior-gallery-caption">Rapat Tahunan & Gathering Kantor</figcaption>
+          </figure>
+          <figure class="interior-gallery-item" data-reveal>
+            <div class="interior-gallery-media" data-image-slot="event_galeri_3" data-width="800" data-height="600"></div>
+            <figcaption class="interior-gallery-caption">Seminar Kampus & Komunitas Kreatif</figcaption>
+          </figure>
+          <figure class="interior-gallery-item" data-reveal>
+            <div class="interior-gallery-media" data-image-slot="event_galeri_4" data-width="800" data-height="600"></div>
+            <figcaption class="interior-gallery-caption">Layanan Seduh Barista di Lokasi</figcaption>
+          </figure>
+        </div>
+
+        <!-- Langkah Pemesanan (Hubungi, Konfirmasi, Hari-H) -->
+        <div class="event-steps-wrap">
+          <div class="section-header center" data-reveal>
+            <span class="eyebrow">Cara Pesan</span>
+            <h2 class="section-title">Tiga Langkah Mudah Menuju <em>Hari-H</em></h2>
+          </div>
+
+          <ol class="steps-grid">
+            <li class="step-card" data-reveal>
+              <span class="step-num">01</span>
+              <h3 class="step-title">Hubungi Tim Kami</h3>
+              <p>
+                Sampaikan tanggal acara, lokasi kota, dan perkiraan jumlah tamu lewat WhatsApp maksimal H-5 sebelum acaramu berlangsung.
+              </p>
+            </li>
+            <li class="step-card" data-reveal>
+              <span class="step-num">02</span>
+              <h3 class="step-title">Konfirmasi Varian & Jadwal</h3>
+              <p>
+                Pilih kombinasi menu kopi dan non-kopi yang diinginkan, kirimkan teks untuk label cup custom, lalu selesaikan konfirmasi jadwal.
+              </p>
+            </li>
+            <li class="step-card" data-reveal>
+              <span class="step-num">03</span>
+              <h3 class="step-title">Siap Menyeduh di Hari-H</h3>
+              <p>
+                Tim JedaEvent akan tiba 90 menit sebelum acara dimulai untuk menyiapkan meja bar atau mengantarkan pesanan tepat waktu.
+              </p>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         BAGIAN   : Kotak CTA ke WhatsApp
+         FUNGSI   : Mengarahkan pengunjung yang ingin berkonsultasi
+                    langsung dengan koordinator #JedaEvent.
+         ============================================================ -->
+    <section class="section section-cta-bottom">
+      <div class="container">
+        <div class="cta-box" data-reveal>
+          <!-- >>> EDIT DI SINI <<< -->
+          <span class="eyebrow" style="color: var(--sky-100);">Konsultasi Gratis</span>
+          <h2 class="section-title">Punya Rencana Acara dalam Waktu Dekat?</h2>
+          <p>
+            Ceritakan kebutuhan acaramu kepada tim kami. Kami siap membantu menyesuaikan jumlah porsi dan pilihan menu terbaik sesuai anggaranmu.
+          </p>
+          <a
+            href="https://wa.me/6281200000000?text=Halo%20Jeda%20Coffee%2C%20saya%20ingin%20berkonsultasi%20mengenai%20paket%20%23JedaEvent."
+            data-wa-event="Konsultasi Paket #JedaEvent"
+            target="_blank"
+            rel="noopener"
+            class="btn btn-white"
+          >
+            <span>Tanya Lewat WhatsApp</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer disisipkan otomatis oleh assets/js/components.js -->
+  <footer id="site-footer"></footer>
+
+  <!-- Data & Script -->
+  <script src="assets/data/site-config.js"></script>
+  <script src="assets/data/images.js"></script>
+  <script src="assets/data/menu-data.js"></script>
+  <script src="assets/js/components.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script>
+    /* ============================================================
+       BAGIAN   : Inisialisasi Halaman Event (Paket & Menu Event)
+       FUNGSI   : Merender 4 kartu menu event, mengaktifkan carousel
+                  paket harga + titik indikator, dan menyinkronkan WA.
+       ============================================================ */
+    document.addEventListener("DOMContentLoaded", function () {
+      /* 1. Render 4 Kartu Menu Event (#TemaniHariBahagiamu) */
+      var eventGrid = document.getElementById("event-menu-grid");
+      var allMenu = window.JEDA_MENU_ITEMS || [];
+      if (eventGrid && allMenu.length && window.JedaComponents) {
+        var picks = allMenu.filter(function (item) { return item.eventPick === true; }).slice(0, 4);
+        if (picks.length < 4) picks = allMenu.slice(0, 4);
+        eventGrid.innerHTML = picks.map(function (item, idx) {
+          return window.JedaComponents.createProductCardHTML(item, idx);
+        }).join("");
+        if (window.observeReveals) window.observeReveals(eventGrid);
+      }
+
+      /* 2. Carousel Paket Harga & Titik Indikator */
+      var track = document.getElementById("package-track");
+      var cards = track ? track.querySelectorAll(".package-card") : [];
+      var dots = document.querySelectorAll("[data-pkg-dot]");
+      var prevBtn = document.getElementById("pkg-prev");
+      var nextBtn = document.getElementById("pkg-next");
+      var activePkg = 0;
+
+      function setPkgDot(idx) {
+        activePkg = Math.max(0, Math.min(idx, cards.length - 1));
+        dots.forEach(function (d, i) {
+          var isCur = i === activePkg;
+          d.classList.toggle("is-active", isCur);
+          d.setAttribute("aria-selected", isCur ? "true" : "false");
+        });
+      }
+
+      function scrollToPkg(idx) {
+        if (!track || !cards.length) return;
+        var target = Math.max(0, Math.min(idx, cards.length - 1));
+        var card = cards[target];
+        track.scrollTo({ left: card.offsetLeft - track.offsetLeft, behavior: "smooth" });
+        setPkgDot(target);
+      }
+
+      if (track) {
+        if (window.enableTrackDrag) window.enableTrackDrag(track);
+        track.addEventListener("scroll", function () {
+          var left = track.scrollLeft;
+          var best = 0;
+          var minDiff = Infinity;
+          cards.forEach(function (c, i) {
+            var diff = Math.abs((c.offsetLeft - track.offsetLeft) - left);
+            if (diff < minDiff) { minDiff = diff; best = i; }
+          });
+          setPkgDot(best);
+        }, { passive: true });
+
+        track.addEventListener("keydown", function (e) {
+          if (e.key === "ArrowRight") { e.preventDefault(); scrollToPkg(activePkg + 1); }
+          if (e.key === "ArrowLeft") { e.preventDefault(); scrollToPkg(activePkg - 1); }
+        });
+      }
+
+      dots.forEach(function (dot) {
+        dot.addEventListener("click", function () {
+          scrollToPkg(parseInt(dot.getAttribute("data-pkg-dot"), 10) || 0);
+        });
+      });
+
+      if (prevBtn) prevBtn.addEventListener("click", function () { scrollToPkg(activePkg - 1); });
+      if (nextBtn) nextBtn.addEventListener("click", function () { scrollToPkg(activePkg + 1); });
+
+      /* 3. Sinkronkan nomor WhatsApp dari site-config.js */
+      var waNum = (window.JEDA_CONFIG && window.JEDA_CONFIG.contact && window.JEDA_CONFIG.contact.whatsappNumber) || "6281200000000";
+      document.querySelectorAll("[data-wa-event]").forEach(function (link) {
+        var pkgName = link.getAttribute("data-wa-event");
+        var text = "Halo Jeda Coffee, saya ingin bertanya mengenai layanan #JedaEvent: " + pkgName + ".";
+        link.href = "https://wa.me/" + waNum + "?text=" + encodeURIComponent(text);
+      });
+    });
+  </script>
+</body>
+</html>
